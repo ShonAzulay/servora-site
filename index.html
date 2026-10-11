@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0E1A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Servora | מערכת ניהול לעסקים, בנויה ממודולים">
+<meta property="og:description" content="קביעת תורים, ניהול מלאי, הזמנות, סוכן AI ודוח חודשי. בוחרים את החלקים, אנחנו מרכיבים ומלווים.">
+<meta property="og:locale" content="he_IL">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0E1A'/%3E%3Crect x='6' y='6' width='9' height='9' rx='2' fill='%23D9B26F'/%3E%3Crect x='17' y='6' width='9' height='9' rx='2' fill='none' stroke='%23EDEFF6' stroke-width='1.5' opacity='.6'/%3E%3Crect x='6' y='17' width='9' height='9' rx='2' fill='none' stroke='%23EDEFF6' stroke-width='1.5' opacity='.6'/%3E%3Crect x='17' y='17' width='9' height='9' rx='2' fill='none' stroke='%23D9B26F' stroke-width='1.5'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Servora","telephone":"+972-52-889-2345","email":"shonazulay95@gmail.com","areaServed":"IL","description":"מערכות ניהול לעסקים בנויות ממודולים: קביעת תורים, ניהול מלאי, הזמנות לקוחות, סוכן AI ודוחות."}</script>
+<title>Servora</title>
+<meta name="description" content="Servora בונה לעסקים אפליקציית ניהול אחת מתוך מודולים: קביעת תורים, ניהול מלאי, הזמנות לקוחות, סוכן AI לשירות לקוחות ודוחות חודשיים.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Assistant:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html,body{margin:0}
+/* Layout: RTL single-page, dark ink-navy ground with champagne-gold accent; modular "building blocks" motif */
+:root{
+  --bg:#0A0E1A;
+  --bg-2:#0E1322;
+  --surface:#131A2C;
+  --surface-2:#1A2338;
+  --line:rgba(214,222,245,.10);
+  --line-strong:rgba(214,222,245,.18);
+  --fg:#EDEFF6;
+  --muted:#A3ABC0;
+  --faint:#6E7891;
+  --gold:#D9B26F;
+  --gold-soft:#F0DCB0;
+  --gold-ink:#1A1408;
+  --gold-wash:rgba(217,178,111,.12);
+  --ok:#6FCF9E;
+  --warn:#E8B04A;
+  --shadow:0 30px 80px -30px rgba(0,0,0,.65);
+  --font-display:"Frank Ruhl Libre","David Libre",Georgia,serif;
+  --font-body:"Assistant","Heebo","Segoe UI",Arial,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --radius:14px;
+  --wrap:1180px;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#F4F5F9;--bg-2:#ECEEF4;--surface:#FFFFFF;--surface-2:#F1F2F7;
+    --line:rgba(16,22,40,.09);--line-strong:rgba(16,22,40,.16);
+    --fg:#0E1424;--muted:#4D566C;--faint:#7A8299;
+    --gold:#8A6420;--gold-soft:#6B4C14;--gold-ink:#FFFFFF;--gold-wash:rgba(138,100,32,.09);
+    --ok:#1E8A55;--warn:#A36A00;
+    --shadow:0 30px 70px -35px rgba(20,28,60,.35);
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#F4F5F9;--bg-2:#ECEEF4;--surface:#FFFFFF;--surface-2:#F1F2F7;
+  --line:rgba(16,22,40,.09);--line-strong:rgba(16,22,40,.16);
+  --fg:#0E1424;--muted:#4D566C;--faint:#7A8299;
+  --gold:#8A6420;--gold-soft:#6B4C14;--gold-ink:#FFFFFF;--gold-wash:rgba(138,100,32,.09);
+  --ok:#1E8A55;--warn:#A36A00;
+  --shadow:0 30px 70px -35px rgba(20,28,60,.35);
+  color-scheme:light;
+}
+/* Accessibility: high contrast overrides tokens */
+:root.a11y-contrast{
+  --bg:#000;--bg-2:#000;--surface:#000;--surface-2:#111;
+  --line:#fff;--line-strong:#fff;--fg:#fff;--muted:#fff;--faint:#ddd;
+  --gold:#FFE600;--gold-soft:#FFE600;--gold-ink:#000;--gold-wash:rgba(255,230,0,.15);
+  color-scheme:dark;
+}
+:root.a11y-text-1{font-size:112.5%}
+:root.a11y-text-2{font-size:125%}
+:root.a11y-readable{--font-display:Arial,"Assistant",sans-serif;--font-body:Arial,"Assistant",sans-serif}
+:root.a11y-links a{text-decoration:underline!important;text-underline-offset:3px;outline:1px dashed var(--gold);outline-offset:2px}
+:root.a11y-still *,:root.a11y-still *::before,:root.a11y-still *::after{animation:none!important;transition:none!important}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased}
+.site{direction:rtl;text-align:right;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;line-height:1.15;margin:0;font-weight:700}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:max(16px,4vw)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;inset-inline-start:12px;top:-60px;background:var(--gold);color:var(--gold-ink);padding:10px 16px;border-radius:8px;z-index:100;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+
+/* type scale */
+.eyebrow{font-family:var(--font-body);font-weight:600;font-size:.92rem;letter-spacing:.02em;color:var(--gold);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor;opacity:.7}
+.h-xl{font-size:clamp(2.5rem,5.6vw,4.6rem);font-weight:700;letter-spacing:-.01em}
+.h-lg{font-size:clamp(2rem,3.8vw,3.1rem)}
+.h-md{font-size:clamp(1.3rem,2vw,1.6rem)}
+.lead{font-size:clamp(1.08rem,1.5vw,1.25rem);color:var(--muted);max-width:60ch}
+.gold{color:var(--gold)}
+em.serif{font-style:normal;color:var(--gold);font-weight:500}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 1rem/1 var(--font-body);padding:15px 24px;border-radius:999px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-gold{background:var(--gold);color:var(--gold-ink);box-shadow:0 10px 30px -12px var(--gold)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px var(--gold)}
+.btn-ghost{border-color:var(--line-strong);color:var(--fg);background:transparent}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;direction:ltr}
+.brand-mark{width:30px;height:30px;flex:none}
+.brand-word{font-family:var(--font-display);font-size:1.45rem;font-weight:700;letter-spacing:.01em}
+.nav{display:flex;gap:28px;align-items:center}
+.nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.98rem;transition:color .2s}
+.nav a:hover{color:var(--fg)}
+.top-cta{display:flex;align-items:center;gap:10px}
+.top-cta .btn{padding:11px 18px;font-size:.95rem}
+.theme-btn{background:none;border:1px solid var(--line-strong);color:var(--fg);border-radius:999px;width:44px;height:44px;display:inline-grid;place-items:center;cursor:pointer;transition:border-color .2s,color .2s}
+.theme-btn:hover{border-color:var(--gold);color:var(--gold)}
+.theme-btn svg{width:19px;height:19px}
+.theme-btn .sun{display:none}
+.is-dark .theme-btn .sun{display:block}.is-dark .theme-btn .moon{display:none}
+.menu-btn{display:none;background:none;border:1px solid var(--line-strong);color:var(--fg);border-radius:10px;width:44px;height:44px;cursor:pointer}
+.menu-btn svg{width:20px;height:20px}
+@media (max-width:920px){
+  .nav{display:none;position:absolute;top:72px;inset-inline:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:8px max(16px,4vw) 16px}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+  .nav.open{display:flex}
+  .menu-btn{display:inline-grid;place-items:center}
+  .top-cta .btn-ghost{display:none}
+}
+@media (max-width:460px){.theme-btn{width:40px;height:40px}.top-cta .btn-gold span{display:none}.top-cta .btn-gold{padding:11px 13px}}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(48px,8vw,96px) clamp(56px,8vw,110px);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-10% -20% auto;height:720px;z-index:-1;background:
+  radial-gradient(520px 340px at 22% 30%,var(--gold-wash),transparent 70%),
+  radial-gradient(600px 400px at 85% 10%,rgba(90,120,220,.10),transparent 70%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 20%,transparent 75%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero-copy{min-width:0;display:grid;gap:26px}
+.hero-copy .h-xl span{display:block}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px 22px;color:var(--muted);font-size:.95rem;padding-top:6px}
+.hero-facts li{display:inline-flex;align-items:center;gap:8px}
+.hero-facts svg{width:16px;height:16px;color:var(--gold)}
+.hero-facts{list-style:none;margin:0;padding:0}
+@media (max-width:920px){.hero-grid{grid-template-columns:1fr}.hero-visual{order:2}}
+.rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.24s}.rise.d4{animation-delay:.36s}
+@keyframes rise{from{transform:translateY(14px);opacity:.01}to{transform:none;opacity:1}}
+
+/* phone mock */
+.hero-visual{position:relative;display:grid;place-items:center;gap:18px;min-width:0}
+.phone{width:min(330px,100%);aspect-ratio:330/660;max-width:100%;border-radius:44px;padding:12px;background:linear-gradient(160deg,#2A3350,#0B0F1C 55%,#1C2337);box-shadow:var(--shadow),inset 0 0 0 1px rgba(255,255,255,.08);position:relative}
+.screen{height:100%;border-radius:33px;background:#0F1526;overflow:hidden;display:flex;flex-direction:column;color:#E9ECF5;direction:rtl;font-family:var(--font-body)}
+:root[data-theme="light"] .screen,:root:not([data-theme]) .screen{}
+.notch{height:30px;display:flex;justify-content:space-between;align-items:center;padding:0 22px;font:500 .72rem var(--font-mono);color:#9AA3BC;direction:ltr}
+.notch i{width:90px;height:22px;background:#05070D;border-radius:0 0 14px 14px;display:block;margin-top:-8px}
+.app-head{padding:8px 18px 12px;display:flex;align-items:center;justify-content:space-between}
+.app-head b{font-family:var(--font-display);font-size:1.25rem;font-weight:700}
+.app-head small{display:block;color:#8F98B2;font-size:.72rem;line-height:1.2}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#D9B26F,#8A6420);display:grid;place-items:center;font-weight:700;color:#1A1408;font-size:.85rem}
+.app-tabs{display:flex;gap:6px;padding:0 12px 12px;overflow:hidden}
+.app-tab{flex:1;border:0;background:#182039;color:#9AA3BC;font:600 .74rem var(--font-body);padding:8px 4px;border-radius:10px;cursor:pointer;transition:background .25s,color .25s;white-space:nowrap}
+.app-tab.on{background:#D9B26F;color:#1A1408}
+.app-panel{flex:1;background:#141B30;border-radius:22px 22px 0 0;padding:16px 14px;position:relative;overflow:hidden}
+.pane{position:absolute;inset:16px 14px;display:grid;align-content:start;gap:9px;transition:opacity .45s ease,transform .45s ease}
+.pane[aria-hidden="true"]{opacity:0;transform:translateY(8px);pointer-events:none}
+.pane-title{display:flex;justify-content:space-between;align-items:baseline;font-size:.8rem;color:#8F98B2}
+.pane-title b{color:#E9ECF5;font-size:.92rem}
+.slot{display:grid;grid-template-columns:46px 1fr auto;gap:10px;align-items:center;background:#1A2340;border-radius:12px;padding:10px 12px;font-size:.8rem}
+.slot time{font:500 .78rem var(--font-mono);color:#D9B26F}
+.slot .who{line-height:1.3;min-width:0}
+.slot .who b{display:block;font-size:.84rem}
+.slot .who span{color:#8F98B2;font-size:.72rem}
+.pill{font-size:.66rem;font-weight:700;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:rgba(111,207,158,.16);color:#6FCF9E}
+.pill.wait{background:rgba(232,176,74,.16);color:#E8B04A}
+.pill.low{background:rgba(240,110,110,.16);color:#F08A8A}
+.slot.free{background:transparent;border:1px dashed #2C3757;color:#7E88A6}
+.stock{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;background:#1A2340;border-radius:12px;padding:10px 12px;font-size:.8rem}
+.stock .qty{font-family:var(--font-mono);color:#C9CEDD}
+.worth{margin-top:4px;border:1px solid #2C3757;border-radius:12px;padding:12px;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:#8F98B2}
+.worth b{font:500 1.1rem var(--font-mono);color:#D9B26F}
+.bubble{max-width:82%;padding:9px 12px;border-radius:14px;font-size:.8rem;line-height:1.45}
+.bubble.in{background:#1F2946;justify-self:start;border-start-start-radius:4px}
+.bubble.out{background:#D9B26F;color:#1A1408;justify-self:end;border-start-end-radius:4px}
+.bubble small{display:block;font-size:.64rem;opacity:.7;margin-bottom:2px}
+.bars{display:flex;align-items:flex-end;gap:7px;height:110px;padding:6px 4px 0;border-bottom:1px solid #2C3757}
+.bars i{flex:1;background:#2A3558;border-radius:5px 5px 0 0;display:block}
+.bars i.hot{background:#D9B26F}
+.bar-labels{display:flex;gap:7px;font:400 .6rem var(--font-mono);color:#7E88A6;padding:4px 4px 0;direction:ltr}
+.bar-labels span{flex:1;text-align:center}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.kpi{background:#1A2340;border-radius:12px;padding:10px 12px;font-size:.7rem;color:#8F98B2}
+.kpi b{display:block;font:500 1.05rem var(--font-mono);color:#E9ECF5}
+.mock-note{position:absolute;bottom:10px;inset-inline:0;text-align:center;font-size:.62rem;color:#5E6885}
+.float{position:absolute;background:var(--surface);border:1px solid var(--line-strong);border-radius:14px;padding:11px 14px;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center;font-size:.84rem;line-height:1.3;max-width:220px}
+.float b{display:block;font-size:.88rem}
+.float span{color:var(--muted);font-size:.76rem}
+.float .dot{width:34px;height:34px;border-radius:10px;background:var(--gold-wash);color:var(--gold);display:grid;place-items:center;flex:none}
+.float .dot svg{width:18px;height:18px}
+.float.f1{top:14%;inset-inline-end:-6%;animation:bob 6s ease-in-out infinite}
+.float.f2{bottom:16%;inset-inline-start:-8%;animation:bob 7s ease-in-out infinite reverse}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@media (max-width:1100px){.float.f1{inset-inline-end:0}.float.f2{inset-inline-start:0}}
+@media (max-width:520px){.float{display:none}}
+
+/* sections */
+section{position:relative}
+.sec{padding-block:clamp(72px,10vw,128px)}
+.sec-head{display:grid;gap:16px;margin-bottom:clamp(36px,5vw,60px);max-width:760px}
+.band{background:var(--bg-2);border-block:1px solid var(--line)}
+
+/* problems */
+.pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.pain{background:var(--bg-2);padding:28px 24px;display:grid;gap:10px;align-content:start;min-width:0}
+.pain .q{font-family:var(--font-display);font-size:1.25rem;font-weight:700}
+.pain p{color:var(--muted);font-size:.98rem}
+.pain .tag{font-size:.82rem;font-weight:600;color:var(--gold)}
+@media (max-width:980px){.pain-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.pain-grid{grid-template-columns:1fr}}
+.pivot{margin-top:clamp(40px,6vw,64px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:28px 32px;border-radius:var(--radius);border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);background:linear-gradient(100deg,var(--gold-wash),transparent 70%)}
+.pivot p{font-family:var(--font-display);font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:500;max-width:34ch}
+
+/* modules */
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mod{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;display:grid;gap:14px;align-content:start;position:relative;min-width:0;transition:border-color .25s,transform .25s}
+.mod:hover{border-color:color-mix(in srgb,var(--gold) 45%,transparent);transform:translateY(-3px)}
+.mod .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--gold-wash);color:var(--gold)}
+.mod .ic svg{width:24px;height:24px}
+.mod h3{font-size:1.35rem}
+.mod p{color:var(--muted);font-size:.98rem}
+.mod ul{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:7px;font-size:.93rem}
+.mod li{display:flex;gap:9px;align-items:baseline}
+.mod li::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--gold);flex:none;transform:translateY(-2px)}
+.mod .soon{position:absolute;top:24px;inset-inline-end:22px;font:600 .75rem var(--font-body);color:var(--gold);border:1px solid color-mix(in srgb,var(--gold) 50%,transparent);border-radius:999px;padding:3px 10px}
+.mod.feature{grid-column:span 2;grid-template-columns:auto 1fr;column-gap:22px}
+.mod.feature>.ic{grid-row:span 4}
+@media (max-width:980px){.mods{grid-template-columns:repeat(2,1fr)}.mod.feature{grid-column:span 2}}
+@media (max-width:640px){.mods{grid-template-columns:1fr}.mod.feature{grid-column:auto;grid-template-columns:1fr}.mod.feature>.ic{grid-row:auto}}
+.included{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;padding:20px 24px;border-radius:var(--radius);border:1px dashed var(--line-strong);color:var(--muted);font-size:.95rem}
+.included b{color:var(--fg);font-weight:700}
+.included span{display:inline-flex;align-items:center;gap:8px}
+.included svg{width:16px;height:16px;color:var(--ok)}
+
+/* builder */
+.builder{display:grid;grid-template-columns:1.25fr .95fr;gap:clamp(20px,3vw,36px);align-items:start}
+.picks{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.pick{position:relative}
+.pick input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer;z-index:1}
+.pick .card{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:16px 18px;border-radius:12px;border:1px solid var(--line-strong);background:var(--surface);transition:border-color .2s,background .2s}
+.pick .card .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--surface-2);color:var(--muted);transition:all .2s}
+.pick .card .ic svg{width:20px;height:20px}
+.pick .card b{display:block;font-size:1rem;line-height:1.3}
+.pick .card small{color:var(--faint);font-size:.8rem;line-height:1.35;display:block}
+.pick .box{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--line-strong);display:grid;place-items:center;transition:all .2s}
+.pick .box svg{width:14px;height:14px;opacity:0;color:var(--gold-ink)}
+.pick input:checked+.card{border-color:var(--gold);background:linear-gradient(120deg,var(--gold-wash),var(--surface) 70%)}
+.pick input:checked+.card .ic{background:var(--gold);color:var(--gold-ink)}
+.pick input:checked+.card .box{background:var(--gold);border-color:var(--gold)}
+.pick input:checked+.card .box svg{opacity:1}
+.pick input:focus-visible+.card{outline:2px solid var(--gold);outline-offset:3px}
+.pick.flash .card{animation:flash 1s ease}
+@keyframes flash{30%{box-shadow:0 0 0 4px var(--gold-wash)}}
+@media (max-width:980px){.builder{grid-template-columns:1fr}}
+@media (max-width:560px){.picks{grid-template-columns:1fr}}
+.summary{position:sticky;top:96px;background:var(--surface);border:1px solid var(--line-strong);border-radius:20px;padding:24px;display:grid;gap:18px;box-shadow:var(--shadow)}
+.summary label.bn{display:grid;gap:6px;font-size:.85rem;color:var(--muted)}
+.mini{border-radius:16px;background:#0F1526;color:#E9ECF5;padding:16px;display:grid;gap:12px;border:1px solid rgba(255,255,255,.06)}
+.mini-head{display:flex;justify-content:space-between;align-items:center}
+.mini-head b{font-family:var(--font-display);font-size:1.15rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mini-tabs{display:flex;flex-wrap:wrap;gap:6px;min-height:32px}
+.mini-tabs span{font-size:.75rem;font-weight:600;padding:6px 10px;border-radius:9px;background:#182039;color:#C9CEDD;animation:pop .3s ease}
+.mini-tabs span:first-child{background:#D9B26F;color:#1A1408}
+.mini-tabs em{font-style:normal;font-size:.8rem;color:#7E88A6}
+@keyframes pop{from{transform:scale(.85);opacity:.3}}
+.mini-body{height:64px;border-radius:10px;background:repeating-linear-gradient(0deg,#141B30 0 14px,#18203A 14px 15px)}
+.sum-line{display:flex;justify-content:space-between;align-items:baseline;font-size:.95rem}
+.sum-line b{font-family:var(--font-mono);font-size:1.4rem;color:var(--gold)}
+.dep-note{font-size:.86rem;color:var(--fg);background:var(--gold-wash);border-radius:10px;padding:10px 12px;line-height:1.5}
+.dep-note[hidden]{display:none}
+.summary .btn{width:100%}
+.fineprint{font-size:.8rem;color:var(--faint);line-height:1.5}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:s;position:relative}
+.steps::before{content:"";position:absolute;top:27px;inset-inline:6%;height:1px;background:linear-gradient(90deg,transparent,var(--line-strong) 10%,var(--line-strong) 90%,transparent)}
+.step{display:grid;gap:12px;align-content:start;padding-inline:14px;position:relative;min-width:0}
+.step .n{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font:500 1rem var(--font-mono);background:var(--bg);border:1px solid var(--line-strong);color:var(--gold);position:relative}
+.step:first-child .n{background:var(--gold);color:var(--gold-ink);border-color:var(--gold)}
+.step h3{font-size:1.2rem}
+.step p{color:var(--muted);font-size:.95rem}
+@media (max-width:980px){
+  .steps{grid-template-columns:1fr;gap:26px}
+  .steps::before{top:0;bottom:0;inset-inline-start:27px;inset-inline-end:auto;width:1px;height:auto;background:var(--line-strong)}
+  .step{grid-template-columns:54px 1fr;column-gap:18px;padding:0}
+  .step .n{grid-row:span 2}
+}
+
+/* audience */
+.aud{display:flex;flex-wrap:wrap;gap:10px}
+.aud span{border:1px solid var(--line-strong);border-radius:999px;padding:10px 18px;font-size:.98rem;background:var(--surface)}
+.aud span b{color:var(--gold);font-weight:600}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,48px);margin-top:clamp(48px,6vw,72px)}
+.why div{display:grid;gap:8px;border-top:1px solid var(--line-strong);padding-top:20px;min-width:0}
+.why h3{font-size:1.2rem}
+.why p{color:var(--muted);font-size:.97rem}
+@media (max-width:860px){.why{grid-template-columns:1fr}}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.member{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3vw,36px);display:grid;gap:18px;align-content:start;min-width:0}
+.member-top{display:flex;gap:18px;align-items:center}
+.mono{width:72px;height:72px;border-radius:18px;display:grid;place-items:center;font-family:var(--font-display);font-size:1.7rem;font-weight:700;background:linear-gradient(140deg,var(--gold),color-mix(in srgb,var(--gold) 45%,var(--bg)));color:var(--gold-ink);flex:none}
+.member h3{font-size:1.55rem}
+.member .role{color:var(--gold);font-weight:600;font-size:.95rem}
+.member p{color:var(--muted)}
+.creds{display:grid;gap:0;border-top:1px solid var(--line)}
+.cred{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem;align-items:baseline}
+.cred .k{font-family:var(--font-mono);font-size:.74rem;color:var(--gold);letter-spacing:.04em;min-width:58px;direction:ltr;text-align:right}
+.cred .v b{font-weight:700}
+.cred .v span{color:var(--muted)}
+.team-note{margin-top:22px;text-align:center;color:var(--muted);font-size:1.02rem}
+.team-note b{color:var(--fg)}
+@media (max-width:1040px){.team{grid-template-columns:1fr}}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,72px);align-items:start}
+.faq details{border-bottom:1px solid var(--line-strong)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;gap:16px;align-items:center;font-family:var(--font-display);font-size:1.18rem;font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--font-mono);font-size:1.3rem;color:var(--gold);transition:transform .25s;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 22px;color:var(--muted);max-width:62ch}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:start}
+.contact-info{display:grid;gap:22px}
+.channel{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:16px 18px;border:1px solid var(--line-strong);border-radius:14px;background:var(--surface)}
+.channel .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--gold-wash);color:var(--gold)}
+.channel .ic svg{width:20px;height:20px}
+.channel small{display:block;color:var(--faint);font-size:.8rem}
+.channel .val{font-family:var(--font-mono);font-size:1rem;direction:ltr;text-align:right;user-select:all;overflow-wrap:anywhere}
+.copy{background:none;border:1px solid var(--line-strong);color:var(--muted);border-radius:9px;padding:7px 11px;font:500 .8rem var(--font-body);cursor:pointer}
+.copy:hover{color:var(--gold);border-color:var(--gold)}
+form.cf{background:var(--surface);border:1px solid var(--line-strong);border-radius:20px;padding:clamp(22px,3vw,34px);display:grid;gap:16px;grid-template-columns:1fr 1fr}
+.cf .full{grid-column:1/-1}
+.field{display:grid;gap:7px;min-width:0}
+.field label{font-size:.88rem;font-weight:600}
+.field label i{font-style:normal;color:var(--gold)}
+.field input,.field select,.field textarea,.summary input{width:100%;font:400 1rem var(--font-body);color:var(--fg);background:var(--bg);border:1px solid var(--line-strong);border-radius:10px;padding:13px 14px;transition:border-color .2s}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus,.summary input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-wash)}
+.field .err{font-size:.8rem;color:#F08A8A;min-height:0}
+.field.bad input,.field.bad select{border-color:#F08A8A}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--muted)}
+.consent input{width:18px;height:18px;margin-top:4px;accent-color:var(--gold);flex:none}
+.consent button.linkish{color:var(--gold)}
+.chosen{font-size:.88rem;color:var(--muted);padding:12px 14px;border-radius:10px;background:var(--bg);border:1px dashed var(--line-strong)}
+.chosen b{color:var(--fg)}
+.form-status{font-size:.9rem;color:var(--ok)}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+@media (max-width:520px){form.cf{grid-template-columns:1fr}}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding-block:48px 110px;background:var(--bg-2)}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
+.foot p{color:var(--muted);font-size:.93rem;max-width:40ch;margin-top:12px}
+.foot h4{font:700 .9rem var(--font-body);color:var(--fg);margin:0 0 14px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.foot a,.linkish{color:var(--muted);text-decoration:none;background:none;border:0;padding:0;font:inherit;cursor:pointer;text-align:inherit}
+.foot a:hover,.linkish:hover{color:var(--gold)}
+.foot-bottom{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;color:var(--faint);font-size:.85rem}
+@media (max-width:760px){.foot{grid-template-columns:1fr}}
+
+/* floating controls */
+.fab{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;border:0;cursor:pointer;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);text-decoration:none}
+.fab svg{width:26px;height:26px}
+.fab-wa{inset-inline-start:18px;background:#25D366;color:#fff}
+.fab-a11y{inset-inline-end:18px;background:#1F5FD1;color:#fff}
+.a11y-panel{position:fixed;bottom:calc(84px + env(safe-area-inset-bottom,0px));inset-inline-end:18px;z-index:61;width:min(300px,calc(100vw - 36px));background:var(--surface);border:1px solid var(--line-strong);border-radius:16px;padding:18px;box-shadow:var(--shadow);display:grid;gap:8px}
+.a11y-panel h2{font-family:var(--font-body);font-size:1.05rem;font-weight:700;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center}
+.a11y-panel h2 button{background:none;border:0;color:var(--muted);font-size:1.3rem;cursor:pointer;line-height:1}
+.a11y-panel .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.a11y-panel button.opt{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;background:var(--surface-2);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:600 .9rem var(--font-body);cursor:pointer;text-align:right}
+.a11y-panel button.opt[aria-pressed="true"]{border-color:var(--gold);background:var(--gold-wash)}
+.a11y-panel button.opt[aria-pressed="true"]::after{content:"✓";color:var(--gold)}
+.a11y-panel .linkish{font-size:.88rem;color:var(--gold);padding-top:6px}
+.cookie{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline:86px;margin-inline:auto;max-width:640px;z-index:59;background:var(--surface);border:1px solid var(--line-strong);border-radius:14px;padding:14px 18px;display:flex;gap:16px;align-items:center;justify-content:space-between;box-shadow:var(--shadow);font-size:.88rem;color:var(--muted)}
+.cookie .btn{padding:10px 18px;font-size:.88rem}
+@media (max-width:560px){.cookie{inset-inline:12px;bottom:calc(84px + env(safe-area-inset-bottom,0px));flex-direction:column;align-items:stretch}}
+
+/* legal dialogs */
+dialog.legal{width:min(760px,calc(100vw - 32px));max-height:min(86vh,900px);padding:0;border:1px solid var(--line-strong);border-radius:20px;background:var(--surface);color:var(--fg);direction:rtl;text-align:right;box-shadow:var(--shadow)}
+dialog.legal::backdrop{background:rgba(4,6,12,.7);backdrop-filter:blur(4px)}
+.legal-head{position:sticky;top:0;background:var(--surface);display:flex;justify-content:space-between;align-items:center;padding:20px 26px;border-bottom:1px solid var(--line);z-index:1}
+.legal-head h2{font-size:1.5rem}
+.legal-head button{background:none;border:1px solid var(--line-strong);color:var(--fg);border-radius:10px;width:40px;height:40px;font-size:1.2rem;cursor:pointer}
+.legal-body{padding:22px 26px 30px;display:grid;gap:14px;font-size:.97rem;color:var(--muted);font-family:var(--font-body)}
+.legal-body h3{font-family:var(--font-body);font-size:1.08rem;font-weight:700;color:var(--fg);margin-top:8px}
+.legal-body ul{margin:0;padding-inline-start:20px;display:grid;gap:6px}
+.legal-body b{color:var(--fg)}
+.legal-body .upd{font-family:var(--font-mono);font-size:.78rem;color:var(--faint)}
+
+
+/* device toggle: mobile / desktop preview */
+.device-toggle{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--line-strong);border-radius:999px;background:var(--surface)}
+.device-toggle button{display:inline-flex;align-items:center;gap:7px;border:0;background:none;color:var(--muted);font:600 .9rem var(--font-body);padding:8px 16px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.device-toggle button svg{width:16px;height:16px}
+.device-toggle button[aria-pressed="true"]{background:var(--gold);color:var(--gold-ink)}
+.device-toggle button:not([aria-pressed="true"]):hover{color:var(--fg)}
+.phone .d{display:none}
+.phone.desk{width:min(580px,100%);aspect-ratio:1/.8;border-radius:16px;padding:10px;margin-bottom:14px}
+.phone.desk::after{content:"";position:absolute;bottom:-14px;inset-inline:-6%;height:14px;border-radius:0 0 16px 16px;background:linear-gradient(#2E3756,#121829);box-shadow:0 18px 30px -12px rgba(0,0,0,.6)}
+.phone.desk .screen{border-radius:8px;display:grid;grid-template-columns:118px 1fr;grid-template-rows:auto auto 1fr}
+.phone.desk .notch{grid-column:1/-1;height:32px;background:#0B1020;justify-content:flex-start;gap:14px;padding:0 14px}
+.phone.desk .m{display:none}
+.phone.desk .d{display:inline-flex}
+.dots{gap:6px}.dots b{width:9px;height:9px;border-radius:50%;background:#2C3757;display:block}
+.dots b:first-child{background:#E06C6C}.dots b:nth-child(2){background:#E8B04A}.dots b:nth-child(3){background:#6FCF9E}
+.url{flex:1;max-width:300px;margin-inline:auto;background:#141B30;border-radius:6px;padding:3px 12px;font:400 .68rem var(--font-mono);color:#8F98B2;justify-content:center}
+.phone.desk .app-head{grid-column:1/-1;border-bottom:1px solid #1F2946;padding:10px 18px}
+.phone.desk .app-tabs{grid-column:1;grid-row:3;flex-direction:column;padding:14px 10px;gap:6px;border-inline-end:1px solid #1F2946}
+.phone.desk .app-tab{flex:none;text-align:right;padding:10px 12px;font-size:.8rem}
+.phone.desk .app-panel{grid-column:2;grid-row:3;border-radius:0;padding:14px 18px}
+.phone.desk .pane{inset:14px 18px}
+.phone.desk .slot{padding:6px 12px}
+.phone.desk .pane{gap:7px}
+.phone.desk .pane[data-i="0"] .slot:nth-child(6){display:none}
+.phone.desk .mock-note{bottom:4px}
+.hero-grid.is-desk{grid-template-columns:1fr 1fr}
+@media (max-width:920px){.hero-grid.is-desk{grid-template-columns:1fr}}
+.hero-visual.is-desk .float{display:none}
+.phone.desk .kpis{grid-template-columns:repeat(4,1fr)}
+.phone.desk .bars{height:96px}
+.phone.desk .bubble{max-width:62%}
+.phone.desk .stock{padding:8px 12px}
+@media (max-width:560px){
+  .phone.desk{aspect-ratio:auto;height:440px}
+  .phone.desk .screen{grid-template-columns:92px 1fr}
+  .phone.desk .app-tab{font-size:.7rem;padding:8px 8px}
+  .phone.desk .url{display:none}
+  .phone.desk .kpis{grid-template-columns:1fr 1fr}
+  .phone.desk .app-panel{padding:12px}
+  .phone.desk .pane{inset:12px}
+}
+.swap{animation:swap .45s ease}
+@keyframes swap{from{opacity:.25;transform:scale(.985)}}
+.mini.m-phone{width:min(240px,100%);margin-inline:auto;border-radius:28px;border:6px solid #1C2337;padding:16px 12px}
+.mini.m-desk{display:grid;grid-template-columns:104px 1fr;grid-template-rows:auto 1fr;gap:0;padding:0;overflow:hidden;border:6px solid #1C2337;border-radius:12px}
+.mini.m-desk .mini-head{grid-column:1/-1;padding:12px 14px;border-bottom:1px solid #1F2946}
+.mini.m-desk .mini-tabs{flex-direction:column;flex-wrap:nowrap;padding:10px 8px;border-inline-end:1px solid #1F2946;min-height:120px}
+.mini.m-desk .mini-tabs span{text-align:right}
+.mini.m-desk .mini-body{height:auto;min-height:120px;margin:10px;border-radius:8px}
+.mini-toggle{justify-self:center}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+
+</head>
+<body>
+<div class="site" id="top" dir="rtl" lang="he">
+<a class="skip" href="#main">דלג לתוכן הראשי</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Servora, לראש העמוד">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="12" height="12" rx="3" fill="var(--gold)"/><rect x="17" y="3" width="12" height="12" rx="3" fill="none" stroke="var(--fg)" stroke-width="1.6" opacity=".55"/><rect x="3" y="17" width="12" height="12" rx="3" fill="none" stroke="var(--fg)" stroke-width="1.6" opacity=".55"/><rect x="17" y="17" width="12" height="12" rx="3" fill="none" stroke="var(--gold)" stroke-width="1.6"/></svg>
+      <span class="brand-word">Servora</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="ניווט ראשי">
+      <a href="#services">השירותים</a>
+      <a href="#builder">הרכבת חבילה</a>
+      <a href="#process">איך זה עובד</a>
+      <a href="#team">מי אנחנו</a>
+      <a href="#faq">שאלות</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+    <div class="top-cta">
+      <a class="btn btn-ghost" href="#builder">הרכיבו חבילה</a>
+      <a class="btn btn-gold wa-link" href="https://wa.me/972528892345" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.7-.6 13.4 13.4 0 0 1-5.1-4.5c-.4-.5-1.4-1.8-1.4-3.4s.8-2.4 1.2-2.7c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.3.5-.4.5c-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.3.7-.2l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.6z"/></svg>
+        <span>דברו איתנו</span>
+      </a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="מעבר לתצוגה בהירה">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="פתיחת תפריט">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow rise">מערכת ניהול לעסקים, בנויה ממודולים</span>
+      <h1 class="h-xl rise d1"><span>האפליקציה של העסק שלכם,</span><span class="gold">מורכבת בדיוק ממה שצריך.</span></h1>
+      <p class="lead rise d2">קביעת תורים, ניהול מלאי, הזמנות, סוכן AI שעונה ללקוחות ודוח חודשי ברור. אתם בוחרים את החלקים, אנחנו מרכיבים, מתאימים לעסק ומלווים אתכם גם אחרי שעולים לאוויר.</p>
+      <div class="hero-ctas rise d3">
+        <a class="btn btn-gold" href="#builder">הרכיבו את החבילה שלכם
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#services">מה אפשר לקבל</a>
+      </div>
+      <ul class="hero-facts rise d4">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L19 8"/></svg>עובד בכל טלפון ומחשב</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L19 8"/></svg>בעברית, מותאם לעסקים בישראל</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L19 8"/></svg>משלמים רק על מה שבוחרים</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual rise d2" aria-label="דוגמה לאפליקציה של מספרה">
+      <div class="device-toggle" role="group" aria-label="סוג תצוגה">
+        <button type="button" data-device="mobile" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>נייד</button>
+        <button type="button" data-device="desktop" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>מחשב</button>
+      </div>
+      <div class="phone" id="phone">
+        <div class="screen">
+          <div class="notch"><span class="m">09:41</span><i class="m"></i><span class="m">5G</span><span class="d dots" aria-hidden="true"><b></b><b></b><b></b></span><span class="d url">app.servora.co.il/misparat-ran</span></div>
+          <div class="app-head">
+            <div><b>מספרת רן</b><small>ניהול העסק</small></div>
+            <div class="avatar" aria-hidden="true">ר</div>
+          </div>
+          <div class="app-tabs" role="tablist" aria-label="מודולים באפליקציה לדוגמה">
+            <button class="app-tab on" role="tab" aria-selected="true" data-pane="0">תורים</button>
+            <button class="app-tab" role="tab" aria-selected="false" data-pane="1">מלאי</button>
+            <button class="app-tab" role="tab" aria-selected="false" data-pane="2">סוכן AI</button>
+            <button class="app-tab" role="tab" aria-selected="false" data-pane="3">דוחות</button>
+          </div>
+          <div class="app-panel">
+            <div class="pane" data-i="0" aria-hidden="false">
+              <div class="pane-title"><b>יום ג׳, 13 באוקטובר</b><span>רונן · 6 תורים</span></div>
+              <div class="slot"><time>09:00</time><div class="who"><b>אבי כהן</b><span>תספורת גבר · 30 דק׳</span></div><span class="pill ok">מאושר</span></div>
+              <div class="slot"><time>09:30</time><div class="who"><b>יוסי לוי</b><span>תספורת + זקן · 45 דק׳</span></div><span class="pill ok">מאושר</span></div>
+              <div class="slot free"><time>10:15</time><div class="who"><b>פנוי</b><span>לקוחות יכולים לקבוע</span></div><span></span></div>
+              <div class="slot"><time>11:00</time><div class="who"><b>נועם ש.</b><span>צבע · 60 דק׳</span></div><span class="pill wait">ממתין</span></div>
+              <div class="slot"><time>12:15</time><div class="who"><b>עומר ב.</b><span>תספורת גבר · 30 דק׳</span></div><span class="pill ok">מאושר</span></div>
+            </div>
+            <div class="pane" data-i="1" aria-hidden="true">
+              <div class="pane-title"><b>מלאי בחנות</b><span>12 מוצרים</span></div>
+              <div class="stock"><span>ג׳ל עיצוב חזק</span><span class="qty">24</span><span class="pill ok">תקין</span></div>
+              <div class="stock"><span>שמפו מקצועי 1L</span><span class="qty">3</span><span class="pill low">נמוך</span></div>
+              <div class="stock"><span>וקס מט</span><span class="qty">15</span><span class="pill ok">תקין</span></div>
+              <div class="stock"><span>שמן זקן</span><span class="qty">8</span><span class="pill ok">תקין</span></div>
+              <div class="worth"><span>שווי המלאי על המדף</span><b>₪3,480</b></div>
+            </div>
+            <div class="pane" data-i="2" aria-hidden="true">
+              <div class="pane-title"><b>שיחה עם לקוח</b><span>23:12</span></div>
+              <div class="bubble in"><small>לקוח</small>היי, יש תור מחר בבוקר?</div>
+              <div class="bubble out"><small>סוכן AI של מספרת רן</small>כן! יש 10:15 או 11:30 אצל רונן. לשריין לך?</div>
+              <div class="bubble in"><small>לקוח</small>10:15 מעולה. כמה עולה תספורת?</div>
+              <div class="bubble out"><small>סוכן AI של מספרת רן</small>תספורת גבר 70 ₪. שלחתי לך קישור לאישור התור ב-10:15 ✂️</div>
+            </div>
+            <div class="pane" data-i="3" aria-hidden="true">
+              <div class="pane-title"><b>ספטמבר במבט אחד</b><span>שעות עומס</span></div>
+              <div class="bars" aria-hidden="true"><i style="height:30%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:68%"></i><i class="hot" style="height:96%"></i><i class="hot" style="height:84%"></i><i style="height:40%"></i></div>
+              <div class="bar-labels" aria-hidden="true"><span>9</span><span>11</span><span>13</span><span>15</span><span>17</span><span>19</span><span>21</span></div>
+              <div class="kpis">
+                <div class="kpi"><b>142</b>תורים שהתקיימו</div>
+                <div class="kpi"><b>₪9,860</b>הכנסות מתורים</div>
+                <div class="kpi"><b>38</b>לקוחות חוזרים</div>
+                <div class="kpi"><b>תספורת</b>השירות המבוקש</div>
+              </div>
+            </div>
+            <div class="mock-note">נתוני דוגמה</div>
+          </div>
+        </div>
+      </div>
+      <div class="float f1" aria-hidden="true"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><b>תור חדש נקבע</b><span>מחר, 10:15 · דרך הסוכן</span></div></div>
+      <div class="float f2" aria-hidden="true"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></span><div><b>שמפו מקצועי עומד להיגמר</b><span>נשארו 3 יחידות</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="sec band" aria-labelledby="pain-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">נשמע מוכר?</span>
+      <h2 class="h-lg" id="pain-h">העסק רץ. הניהול מתפזר.</h2>
+      <p class="lead">רוב בעלי העסקים שאנחנו פוגשים מנהלים את היום בין וואטסאפ, יומן בטלפון, מחברת ליד הקופה וזיכרון. זה עובד, עד שזה לא.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain"><span class="tag">תורים</span><p class="q">״אפשר תור מחר?״ בשעה 23:00</p><p>הודעות בכל שעה, תורים שנשכחים, ולקוח שלא הגיע ותפס שעה שמישהו אחר היה לוקח.</p></div>
+      <div class="pain"><span class="tag">מלאי</span><p class="q">מה נשאר על המדף?</p><p>מגלים שמוצר נגמר רק כשלקוח מבקש אותו, ואין מושג כמה כסף יושב במחסן.</p></div>
+      <div class="pain"><span class="tag">שירות</span><p class="q">אותן חמש שאלות, כל יום</p><p>כמה זה עולה, מתי אתם פתוחים, איפה חונים. שעות של מענה על דברים שכבר כתובים איפשהו.</p></div>
+      <div class="pain"><span class="tag">מספרים</span><p class="q">איך היה החודש?</p><p>כמה הכנסתם, מי הלקוחות הקבועים, מתי הכי עמוס. התשובה נמצאת בעשרה מקומות שונים.</p></div>
+    </div>
+    <div class="pivot">
+      <p>במקום חמש אפליקציות ומחברת: <span class="gold">מערכת אחת</span>, בנויה רק מהחלקים שהעסק שלכם צריך.</p>
+      <a class="btn btn-gold" href="#services">לשירותים</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">השירותים</span>
+      <h2 class="h-lg" id="svc-h">כל מודול פותר בעיה אחת, ועובד יחד עם השאר.</h2>
+      <p class="lead">המודולים מדברים אחד עם השני. סוכן ה-AI רואה מה פנוי ביומן, הזמנה של לקוח מורידה מהמלאי, והדוח החודשי אוסף הכל למקום אחד.</p>
+    </div>
+    <div class="mods">
+      <article class="mod feature">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+        <h3>קביעת תורים</h3>
+        <p>יומן חכם לעסק עם כמה נותני שירות. הלקוחות בוחרים שירות, איש מקצוע ושעה פנויה, ואתם רק מאשרים.</p>
+        <ul>
+          <li>יומן נפרד לכל עובד, עם כניסה אישית לכל אחד</li>
+          <li>חסימת שעות, חופשות והפסקות בלחיצה</li>
+          <li>אישור או דחייה של תורים ממתינים</li>
+          <li>חסימת מספר שקובע תורים ולא מגיע</li>
+        </ul>
+      </article>
+      <article class="mod">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01"/></svg></span>
+        <h3>סוכן AI לשירות לקוחות</h3>
+        <p>עונה ללקוחות שלכם בכל שעה, בשפה טבעית, על בסיס המידע של העסק שלכם בלבד.</p>
+        <ul>
+          <li>יודע מחירים, שעות, שירותים ומה פנוי ביומן</li>
+          <li>שאלה שלא ידע לענות עליה מגיעה אליכם, ומשם הוא לומד</li>
+        </ul>
+      </article>
+      <article class="mod">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></span>
+        <h3>ניהול מלאי</h3>
+        <p>כמה יש מכל מוצר, מה עומד להיגמר, וכמה כסף יושב לכם על המדף.</p>
+        <ul>
+          <li>מתאים גם למספרה שמוכרת בקופה וגם לספק</li>
+          <li>שווי מלאי לפי מחיר קנייה</li>
+        </ul>
+      </article>
+      <article class="mod">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.5L21 8H6"/><circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg></span>
+        <h3>הזמנות לקוחות</h3>
+        <p>הלקוחות מזמינים מוצרים דרך האפליקציה, אתם מאשרים, והמלאי מתעדכן לבד.</p>
+        <ul>
+          <li>הזמנה ממתינה, אישור, ירידה מהמלאי</li>
+          <li>עובד יחד עם מודול ניהול המלאי</li>
+        </ul>
+      </article>
+      <article class="mod">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.4"/><path d="M5.5 16.5c.8-1.7 2-2.4 3.5-2.4s2.7.7 3.5 2.4M14.5 10h4M14.5 13h4"/></svg></span>
+        <h3>כרטיס לקוח</h3>
+        <p>כל לקוח במקום אחד: פרטים, היסטוריית תורים והזמנות, והערות שלכם.</p>
+        <ul>
+          <li>רואים מי חוזר ומי נעלם</li>
+          <li>טלפון ופרטים בלחיצה מתוך התור</li>
+        </ul>
+      </article>
+      <article class="mod">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span>
+        <h3>דוח חודשי</h3>
+        <p>סיכום של מה שקרה בחודש, בשפה פשוטה ובלי אקסלים.</p>
+        <ul>
+          <li>הכנסות, מספר לקוחות ותורים</li>
+          <li>השירותים המבוקשים ושעות העומס</li>
+        </ul>
+      </article>
+      <article class="mod">
+        <span class="soon">בקרוב</span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></span>
+        <h3>סליקה ותשלומים</h3>
+        <p>תשלום מראש על תור או הזמנה, ישירות מהאפליקציה.</p>
+        <ul>
+          <li>מקדמה לתורים כדי לצמצם אי-הגעות</li>
+          <li>תשלום על הזמנות מוצרים</li>
+        </ul>
+      </article>
+      <article class="mod">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><path d="M17 14v6M14 17h6"/></svg></span>
+        <h3>מודול בהתאמה אישית</h3>
+        <p>לעסק שלכם יש צורך שאין לאף אחד אחר? נאפיין ונבנה אותו כחלק מהמערכת.</p>
+        <ul>
+          <li>אפיון משותף והצעת מחיר מראש</li>
+          <li>משתלב עם שאר המודולים</li>
+        </ul>
+      </article>
+    </div>
+    <div class="included">
+      <b>כלול בכל חבילה:</b>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L19 8"/></svg>חשבון לבעל העסק ולכל עובד</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L19 8"/></svg>קישור ללקוחות שלכם</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L19 8"/></svg>הקמה והדרכה</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L19 8"/></svg>עדכונים ותמיכה שוטפת</span>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDER -->
+<section class="sec band" id="builder" aria-labelledby="bld-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">הרכבת חבילה</span>
+      <h2 class="h-lg" id="bld-h">סמנו מה העסק צריך. תראו איך זה נראה.</h2>
+      <p class="lead">זו לא התחייבות. בוחרים מודולים, רואים את האפליקציה מתמלאת, ושולחים לנו בוואטסאפ כדי שנחזור עם הצעה.</p>
+    </div>
+    <div class="builder">
+      <fieldset class="picks" id="picks" style="border:0;padding:0;margin:0">
+        <legend class="sr-only">בחירת מודולים לחבילה</legend>
+      </fieldset>
+      <aside class="summary" aria-live="polite">
+        <label class="bn" for="bizName">שם העסק שלכם
+          <input id="bizName" type="text" maxlength="28" placeholder="לדוגמה: מספרת רן" autocomplete="organization">
+        </label>
+        <div class="device-toggle mini-toggle" role="group" aria-label="סוג תצוגה">
+        <button type="button" data-device="mobile" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>נייד</button>
+        <button type="button" data-device="desktop" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>מחשב</button>
+      </div>
+        <div class="mini m-phone" id="mini" aria-hidden="true">
+          <div class="mini-head"><b id="miniName">העסק שלכם</b><span class="avatar" id="miniAv">ע</span></div>
+          <div class="mini-tabs" id="miniTabs"></div>
+          <div class="mini-body"></div>
+        </div>
+        <div class="sum-line"><span>מודולים בחבילה</span><b id="sumCount">0</b></div>
+        <p class="dep-note" id="depNote" hidden></p>
+        <a class="btn btn-gold" id="sendPkg" href="https://wa.me/972528892345" target="_blank" rel="noopener">שלחו לנו את החבילה בוואטסאפ</a>
+        <p class="fineprint">המחיר נקבע לפי המודולים שבחרתם וההתאמות שהעסק צריך. נחזור אליכם עם הצעה מסודרת.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process" aria-labelledby="proc-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">איך זה עובד</span>
+      <h2 class="h-lg" id="proc-h">מהשיחה הראשונה ועד שהלקוח הראשון קובע תור.</h2>
+      <p class="lead">אתם לא צריכים להבין בטכנולוגיה. אנחנו עושים את ההקמה, ואתם מקבלים מערכת מוכנה לעבודה.</p>
+    </div>
+    <ol class="steps" style="list-style:none;margin:0;padding:0">
+      <li class="step"><span class="n">01</span><h3>שיחת היכרות</h3><p>מבינים איך העסק עובד היום, מה מעיק ומה חשוב לכם.</p></li>
+      <li class="step"><span class="n">02</span><h3>בוחרים מודולים</h3><p>מרכיבים יחד את החבילה ומקבלים הצעת מחיר ברורה.</p></li>
+      <li class="step"><span class="n">03</span><h3>הקמה והתאמה</h3><p>מכניסים שירותים, מחירים, שעות, עובדים ומוצרים, ומלמדים את סוכן ה-AI על העסק.</p></li>
+      <li class="step"><span class="n">04</span><h3>עולים לאוויר</h3><p>חשבון לכל עובד, קישור ללקוחות, והדרכה קצרה עד שזה טבעי.</p></li>
+      <li class="step"><span class="n">05</span><h3>גדלים ביחד</h3><p>העסק צמח? מוסיפים מודול, והמערכת גדלה איתכם.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- AUDIENCE + WHY -->
+<section class="sec band" aria-labelledby="aud-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">למי זה מתאים</span>
+      <h2 class="h-lg" id="aud-h">לכל עסק שמנהל לקוחות, תורים או מוצרים.</h2>
+    </div>
+    <div class="aud">
+      <span><b>מספרות</b> וסלוני יופי</span>
+      <span><b>טכנאים</b> ונותני שירות בבית</span>
+      <span><b>קליניקות</b> ומטפלים</span>
+      <span><b>ניקוי</b> ספות, שטיחים ורכבים</span>
+      <span><b>ספקים</b> שמוכרים לעסקים</span>
+      <span><b>חנויות</b> קטנות</span>
+      <span><b>מאמנים</b> וסטודיו</span>
+    </div>
+    <div class="why">
+      <div><h3>משלמים על מה שצריך</h3><p>לא חבילה ענקית עם עשרות פיצ׳רים שלא נוגעים בהם. בוחרים מודולים, ומוסיפים כשצריך.</p></div>
+      <div><h3>מערכת אחת, לא חמש</h3><p>היומן, המלאי, הלקוחות והסוכן חיים באותו מקום ומדברים זה עם זה.</p></div>
+      <div><h3>אנשים, לא מוקד</h3><p>יש לכם מספר טלפון של מי שבנה את המערכת. שאלה, בקשה או תקלה מגיעות אלינו ישירות.</p></div>
+      <div><h3>המידע שלכם נשאר שלכם</h3><p>המידע של כל עסק מופרד ומוגן, ונגיש רק לבעל העסק ולעובדים שהוא הוסיף.</p></div>
+      <div><h3>בנוי לישראל</h3><p>עברית מימין לשמאל, מספרי טלפון ישראליים, ותמיכה בשפה שלכם.</p></div>
+      <div><h3>התאמה אישית כשצריך</h3><p>צריכים משהו שלא קיים? אפשר לפתח תוספת ייעודית לעסק שלכם, בתיאום מראש.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec" id="team" aria-labelledby="team-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">מי אנחנו</span>
+      <h2 class="h-lg" id="team-h">טכנולוגיה ומספרים, באותו שולחן.</h2>
+      <p class="lead">Servora נוסדה כדי לתת לעסקים קטנים כלים שעד היום היו שמורים לחברות גדולות, בלי הסיבוך ובלי המחיר.</p>
+    </div>
+    <div class="team">
+      <article class="member">
+        <div class="member-top">
+          <span class="mono" aria-hidden="true">שא</span>
+          <div><h3>שון אזולאי</h3><span class="role">שותף מייסד · פיתוח וטכנולוגיה</span></div>
+        </div>
+        <p>מפתח תוכנה שבונה את המערכת מקצה לקצה, מהשרת ועד המסך שהלקוח רואה. אחראי על הארכיטקטורה, אבטחת המידע ופיתוח המודולים.</p>
+        <div class="creds">
+          <div class="cred"><span class="k">DEV</span><span class="v"><b>הנדסת תוכנה</b> <span>· אורט בראודה</span></span></div>
+          <div class="cred"><span class="k">STACK</span><span class="v"><b>פיתוח Full-Stack</b> <span>· מערכות ווב, מסדי נתונים ובינה מלאכותית</span></span></div>
+        </div>
+      </article>
+      <article class="member">
+        <div class="member-top">
+          <span class="mono" aria-hidden="true">מב</span>
+          <div><h3>מיכאל בונדר</h3><span class="role">שותף מייסד · פיתוח וטכנולוגיה</span></div>
+        </div>
+        <p>מפתח תוכנה שבונה את המערכת מקצה לקצה, מהשרת ועד המסך שהלקוח רואה. שותף לפיתוח המודולים, לחוויית המשתמש ולהקמה אצל הלקוחות.</p>
+        <div class="creds">
+          <div class="cred"><span class="k">DEV</span><span class="v"><b>הנדסת תוכנה</b> <span>· אורט בראודה</span></span></div>
+          <div class="cred"><span class="k">STACK</span><span class="v"><b>פיתוח Full-Stack</b> <span>· מערכות ווב, מסדי נתונים ובינה מלאכותית</span></span></div>
+        </div>
+      </article>
+      <article class="member">
+        <div class="member-top">
+          <span class="mono" aria-hidden="true">דא</span>
+          <div><h3>דניאל אינגר, רו״ח</h3><span class="role">שותף מייסד · אסטרטגיה עסקית וכספים</span></div>
+        </div>
+        <p>רואה חשבון וכלכלן בעל שני תארים שניים, עם ניסיון ב-KPMG, בהערכות שווי בקרן הון סיכון בסין ובקנדה, כחשב כספים וכמרצה לראיית חשבון.</p>
+        <div class="creds">
+          <div class="cred"><span class="k">MBA</span><span class="v"><b>CUHK</b> <span>· בהצטיינות דיקן</span></span></div>
+          <div class="cred"><span class="k">M.A.</span><span class="v"><b>כלכלה</b> <span>· אוניברסיטת חיפה</span></span></div>
+          <div class="cred"><span class="k">B.A.</span><span class="v"><b>כלכלה וחשבונאות</b> <span>· אוניברסיטת חיפה, בהצטיינות</span></span></div>
+          <div class="cred"><span class="k">CPA</span><span class="v"><b>KPMG</b> <span>· התמחות בראיית חשבון</span></span></div>
+        </div>
+      </article>
+    </div>
+    <p class="team-note">מי שבונה לכם את המערכת <b>מבין גם קוד וגם דוחות כספיים</b>. זה ההבדל בין אפליקציה יפה לכלי שבאמת עוזר לנהל עסק.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec band" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faq-grid">
+    <div class="sec-head" style="margin:0">
+      <span class="eyebrow">שאלות נפוצות</span>
+      <h2 class="h-lg" id="faq-h">מה ששואלים אותנו הכי הרבה.</h2>
+      <p class="lead">לא מצאתם תשובה? שלחו הודעה, אנחנו עונים מהר.</p>
+    </div>
+    <div class="faq">
+      <details open><summary>כמה זה עולה?</summary><p>המחיר נבנה לפי המודולים שבחרתם וגודל העסק. יש חבילה בסיסית, וכל מודול נוסף מתומחר בנפרד. אחרי שיחת ההיכרות תקבלו הצעה מסודרת, בלי הפתעות.</p></details>
+      <details><summary>כמה זמן לוקח להתחיל לעבוד?</summary><p>תלוי בכמות המודולים והמידע שצריך להכניס. רוב העבודה בצד שלנו: אתם נותנים את הפרטים, אנחנו מקימים ומחזירים מערכת מוכנה.</p></details>
+      <details><summary>צריך להוריד אפליקציה?</summary><p>לא. המערכת עובדת מכל דפדפן, בטלפון ובמחשב. אפשר להוסיף אותה למסך הבית של הטלפון ולהשתמש בה כמו באפליקציה.</p></details>
+      <details><summary>אפשר להתחיל עם מודול אחד ולהוסיף אחר כך?</summary><p>בדיוק בשביל זה המערכת בנויה ממודולים. מתחילים במה שבוער, ומוסיפים כשהעסק מוכן. המידע שכבר הכנסתם נשאר.</p></details>
+      <details><summary>מה עם המידע של הלקוחות שלי?</summary><p>המידע של כל עסק מופרד משאר העסקים ונגיש רק לבעל העסק ולעובדים שהוא הגדיר. אנחנו לא מוכרים מידע ולא משתמשים בו לשום מטרה מלבד הפעלת המערכת עבורכם.</p></details>
+      <details><summary>איך סוכן ה-AI יודע מה לענות?</summary><p>בהקמה אנחנו ממלאים איתכם שאלון קצר על העסק: שירותים, מחירים, שעות ומדיניות. הסוכן עונה רק על בסיס המידע הזה, ושאלה שהוא לא יודע מגיעה אליכם כדי שתוכלו להשלים.</p></details>
+      <details><summary>אני צריך משהו שלא מופיע ברשימה.</summary><p>ספרו לנו. אם זה מתאים לעוד עסקים, אולי זה המודול הבא שלנו. אם זה ייחודי לכם, נבנה התאמה אישית בתשלום נפרד.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec" id="contact" aria-labelledby="ct-h">
+  <div class="wrap contact">
+    <div class="contact-info">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow">צור קשר</span>
+        <h2 class="h-lg" id="ct-h">בואו נראה מה העסק שלכם צריך.</h2>
+        <p class="lead">השאירו פרטים ונחזור אליכם, או פשוט שלחו הודעה.</p>
+      </div>
+      <div class="channel">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+        <div><small>טלפון ווואטסאפ</small><span class="val" id="phoneVal">052-889-2345</span></div>
+        <button class="copy" type="button" data-copy="0528892345">העתק</button>
+      </div>
+      <div class="channel">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+        <div><small>מייל</small><span class="val">shonazulay95@gmail.com</span></div>
+        <button class="copy" type="button" data-copy="shonazulay95@gmail.com">העתק</button>
+      </div>
+      <a class="btn btn-gold wa-link" href="https://wa.me/972528892345" target="_blank" rel="noopener" style="justify-self:start">פתחו שיחה בוואטסאפ</a>
+    </div>
+
+    <form class="cf" id="cf" novalidate>
+      <div class="field"><label for="f-name">שם מלא <i>*</i></label><input id="f-name" name="name" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+      <div class="field"><label for="f-phone">טלפון <i>*</i></label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required dir="ltr" style="text-align:right"><span class="err" aria-live="polite"></span></div>
+      <div class="field"><label for="f-biz">שם העסק</label><input id="f-biz" name="biz" autocomplete="organization"></div>
+      <div class="field"><label for="f-type">תחום העסק</label>
+        <select id="f-type" name="type">
+          <option value="">בחרו תחום</option>
+          <option>מספרה / סלון יופי</option><option>טכנאי / שירות בבית</option><option>קליניקה / מטפל</option><option>ניקוי ותחזוקה</option><option>ספק / סיטונאי</option><option>חנות</option><option>אימון / סטודיו</option><option>אחר</option>
+        </select></div>
+      <div class="chosen full" id="chosen">עוד לא בחרתם מודולים. אפשר לבחור ב<a href="#builder" class="gold">הרכבת החבילה</a>, או לספר לנו בהודעה.</div>
+      <div class="field full"><label for="f-msg">מה תרצו שנדע?</label><textarea id="f-msg" name="msg" placeholder="לדוגמה: יש לי מספרה עם 3 ספרים ואני רוצה שהלקוחות יקבעו תורים לבד"></textarea></div>
+      <label class="consent full"><input type="checkbox" id="f-consent" required><span>אני מאשר/ת שהפרטים יישלחו ל-Servora לצורך חזרה אליי, בהתאם ל<button type="button" class="linkish" data-open="privacy">מדיניות הפרטיות</button>.</span></label>
+      <div class="full" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+        <a class="btn btn-gold" id="cfSend" href="https://wa.me/972528892345" target="_blank" rel="noopener" role="button">שליחה בוואטסאפ</a>
+        <span class="form-status" id="cfStatus" aria-live="polite"></span>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="Servora, לראש העמוד">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="12" height="12" rx="3" fill="var(--gold)"/><rect x="17" y="3" width="12" height="12" rx="3" fill="none" stroke="var(--fg)" stroke-width="1.6" opacity=".55"/><rect x="3" y="17" width="12" height="12" rx="3" fill="none" stroke="var(--fg)" stroke-width="1.6" opacity=".55"/><rect x="17" y="17" width="12" height="12" rx="3" fill="none" stroke="var(--gold)" stroke-width="1.6"/></svg>
+          <span class="brand-word">Servora</span>
+        </a>
+        <p>מערכות ניהול לעסקים, בנויות ממודולים: תורים, מלאי, הזמנות, סוכן AI ודוחות.</p>
+      </div>
+      <div>
+        <h4>ניווט</h4>
+        <ul><li><a href="#services">השירותים</a></li><li><a href="#builder">הרכבת חבילה</a></li><li><a href="#process">איך זה עובד</a></li><li><a href="#team">מי אנחנו</a></li><li><a href="#contact">צור קשר</a></li></ul>
+      </div>
+      <div>
+        <h4>מידע משפטי</h4>
+        <ul>
+          <li><button class="linkish" data-open="privacy">מדיניות פרטיות</button></li>
+          <li><button class="linkish" data-open="terms">תנאי שימוש</button></li>
+          <li><button class="linkish" data-open="accessibility">הצהרת נגישות</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Servora. כל הזכויות שמורות.</span><span dir="ltr">052-889-2345 · shonazulay95@gmail.com</span></div>
+  </div>
+</footer>
+
+<!-- floating -->
+<a class="fab fab-wa wa-link" href="https://wa.me/972528892345" target="_blank" rel="noopener" aria-label="שיחה בוואטסאפ">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.7-.6 13.4 13.4 0 0 1-5.1-4.5c-.4-.5-1.4-1.8-1.4-3.4s.8-2.4 1.2-2.7c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.3.5-.4.5c-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.3.7-.2l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.6z"/></svg>
+</a>
+<button class="fab fab-a11y" id="a11yBtn" aria-expanded="false" aria-controls="a11yPanel" aria-label="תפריט נגישות">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M4 7.5l8 1.5 8-1.5.4 1.9-5.4 1.3v3.5l2.3 6.5-1.9.7L12 15l-3.4 6.4-1.9-.7L9 14.2v-3.5L3.6 9.4z"/></svg>
+</button>
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="הגדרות נגישות" hidden>
+  <h2>נגישות <button type="button" id="a11yClose" aria-label="סגירת תפריט נגישות">×</button></h2>
+  <div class="row">
+    <button class="opt" type="button" data-a11y="text-up">הגדלת טקסט</button>
+    <button class="opt" type="button" data-a11y="text-down">הקטנת טקסט</button>
+  </div>
+  <button class="opt" type="button" data-a11y="contrast" aria-pressed="false">ניגודיות גבוהה</button>
+  <button class="opt" type="button" data-a11y="links" aria-pressed="false">הדגשת קישורים</button>
+  <button class="opt" type="button" data-a11y="readable" aria-pressed="false">גופן קריא</button>
+  <button class="opt" type="button" data-a11y="still" aria-pressed="false">עצירת אנימציות</button>
+  <button class="opt" type="button" data-a11y="reset">איפוס הגדרות</button>
+  <button class="linkish" type="button" data-open="accessibility">להצהרת הנגישות</button>
+</div>
+<div class="cookie" id="cookie" hidden>
+  <span>האתר לא משתמש בעוגיות מעקב או פרסום. אנחנו שומרים במכשיר שלכם רק את הגדרות הנגישות שבחרתם. <button class="linkish" data-open="privacy" style="color:var(--gold)">פרטים</button></span>
+  <button class="btn btn-gold" id="cookieOk" type="button">הבנתי</button>
+</div>
+
+<!-- LEGAL: privacy -->
+<dialog class="legal" id="dlg-privacy" aria-labelledby="lp-h">
+  <div class="legal-head"><h2 id="lp-h">מדיניות פרטיות</h2><button type="button" data-close aria-label="סגירה">×</button></div>
+  <div class="legal-body">
+    <p class="upd">עודכן לאחרונה: אוקטובר 2026</p>
+    <p>מדיניות זו מסבירה איזה מידע נאסף באתר Servora (״האתר״), איך משתמשים בו ומה הזכויות שלכם. המדיניות נכתבה בהתאם לחוק הגנת הפרטיות, התשמ״א-1981, ולתקנות שהותקנו מכוחו, כולל תיקון מס׳ 13 לחוק. בשימוש באתר אתם מסכימים למדיניות זו.</p>
+    <h3>מי אחראי על המידע</h3>
+    <p>[שם החברה בע״מ], ח.פ. [מספר] (״Servora״, ״אנחנו״). לפניות בנושא פרטיות: shonazulay95@gmail.com או 052-889-2345.</p>
+    <h3>איזה מידע אנחנו אוספים</h3>
+    <ul>
+      <li><b>מידע שאתם מוסרים:</b> שם, טלפון, שם העסק, תחום העסק, המודולים שבחרתם ותוכן ההודעה, כשאתם פונים אלינו דרך הטופס או בוואטסאפ.</li>
+      <li><b>מידע טכני בסיסי:</b> האתר עצמו לא שומר מידע על השרת. הגדרות נגישות שבחרתם נשמרות רק בדפדפן שלכם (Local Storage), ואפשר למחוק אותן בכל עת.</li>
+    </ul>
+    <p>אינכם חייבים למסור לנו מידע לפי חוק. בלי פרטי קשר לא נוכל לחזור אליכם.</p>
+    <h3>למה אנחנו משתמשים במידע</h3>
+    <ul>
+      <li>כדי לחזור אליכם, להבין את צורכי העסק ולהכין הצעה.</li>
+      <li>כדי לתת שירות, אם תבחרו לעבוד איתנו.</li>
+      <li>לא נשלח לכם דיוור שיווקי בלי הסכמה מפורשת, בהתאם לסעיף 30א לחוק התקשורת.</li>
+    </ul>
+    <h3>העברת מידע לצדדים שלישיים</h3>
+    <p>אנחנו לא מוכרים ולא משכירים מידע אישי. פנייה דרך הטופס נשלחת באמצעות WhatsApp (Meta) וכפופה גם למדיניות הפרטיות שלהם. האתר טוען גופנים משירות Google Fonts, שעשוי לקבל את כתובת ה-IP שלכם לצורך הגשת הגופן. מידע עשוי להימסר לרשויות אם הדבר נדרש על פי דין.</p>
+    <h3>אבטחת מידע</h3>
+    <p>אנחנו נוקטים אמצעים סבירים ומקובלים כדי להגן על המידע, בהתאם לתקנות הגנת הפרטיות (אבטחת מידע), התשע״ז-2017. עם זאת, אין אפשרות להבטיח הגנה מוחלטת.</p>
+    <h3>הזכויות שלכם</h3>
+    <p>לפי סעיפים 13 ו-14 לחוק, אתם רשאים לעיין במידע עליכם, ולבקש לתקן או למחוק מידע שאינו נכון, שלם, ברור או מעודכן. אפשר גם לבקש שנפסיק לפנות אליכם. בקשות יש לשלוח למייל שלמעלה, ונענה תוך 30 יום.</p>
+    <h3>שמירת מידע</h3>
+    <p>פניות נשמרות כל עוד הן נחוצות למטרה שלשמה נמסרו, או כנדרש על פי דין, ולאחר מכן נמחקות.</p>
+    <h3>שינויים במדיניות</h3>
+    <p>ייתכן שנעדכן מדיניות זו מעת לעת. הגרסה המעודכנת תפורסם בעמוד זה עם תאריך העדכון.</p>
+  </div>
+</dialog>
+
+<!-- LEGAL: terms -->
+<dialog class="legal" id="dlg-terms" aria-labelledby="lt-h">
+  <div class="legal-head"><h2 id="lt-h">תנאי שימוש</h2><button type="button" data-close aria-label="סגירה">×</button></div>
+  <div class="legal-body">
+    <p class="upd">עודכן לאחרונה: אוקטובר 2026</p>
+    <p>ברוכים הבאים לאתר Servora, המופעל על ידי [שם החברה בע״מ], ח.פ. [מספר]. השימוש באתר כפוף לתנאים אלה. התנאים מנוסחים בלשון זכר מטעמי נוחות בלבד ומיועדים לכל המגדרים.</p>
+    <h3>מטרת האתר</h3>
+    <p>האתר מציג מידע על השירותים של Servora ומאפשר ליצור איתנו קשר. המידע באתר הוא כללי ואינו מהווה הצעה מחייבת. תנאי ההתקשרות, ההיקף והמחיר ייקבעו בהסכם נפרד בכתב.</p>
+    <h3>תוכן ודוגמאות</h3>
+    <p>מסכים, שמות עסקים ונתונים המוצגים באתר הם דוגמאות להמחשה בלבד. יכולות מסומנות ״בקרוב״ נמצאות בפיתוח וייתכנו בהן שינויים.</p>
+    <h3>קניין רוחני</h3>
+    <p>כל הזכויות בתוכן האתר, בעיצוב, בטקסטים, בלוגו ובקוד שייכות ל-Servora. אין להעתיק, להפיץ או לעשות בהם שימוש מסחרי ללא אישור מראש ובכתב.</p>
+    <h3>הגבלת אחריות</h3>
+    <p>האתר מוצג כפי שהוא (As Is). אנו עושים מאמץ שהמידע יהיה מדויק ועדכני, אך לא נהיה אחראים לנזק שנגרם כתוצאה מהסתמכות על המידע באתר או מתקלה בזמינותו. קישורים לאתרים חיצוניים, כמו WhatsApp, ניתנים לנוחות בלבד.</p>
+    <h3>שימוש אסור</h3>
+    <p>אין לעשות באתר שימוש בלתי חוקי, לשלוח דרכו תוכן פוגעני או ספאם, או לנסות לפגוע בפעילותו.</p>
+    <h3>דין וסמכות שיפוט</h3>
+    <p>על תנאים אלה יחולו דיני מדינת ישראל. סמכות השיפוט הבלעדית נתונה לבתי המשפט המוסמכים במחוז חיפה.</p>
+    <h3>יצירת קשר</h3>
+    <p>shonazulay95@gmail.com · 052-889-2345</p>
+  </div>
+</dialog>
+
+<!-- LEGAL: accessibility -->
+<dialog class="legal" id="dlg-accessibility" aria-labelledby="la-h">
+  <div class="legal-head"><h2 id="la-h">הצהרת נגישות</h2><button type="button" data-close aria-label="סגירה">×</button></div>
+  <div class="legal-body">
+    <p class="upd">עודכן לאחרונה: אוקטובר 2026</p>
+    <p>אנחנו ב-Servora רואים חשיבות בהנגשת האתר לאנשים עם מוגבלות, כדי לאפשר לכל אחד לגלוש בו בנוחות ובכבוד. האתר הונגש בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ״ח-1998, ולתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע״ג-2013.</p>
+    <h3>רמת הנגישות</h3>
+    <p>האתר נבנה בהתאם לתקן הישראלי ת״י 5568, המבוסס על הנחיות WCAG 2.0 של ארגון W3C, ברמה AA.</p>
+    <h3>מה עשינו באתר</h3>
+    <ul>
+      <li>מבנה כותרות היררכי ותגיות סמנטיות המותאמות לקוראי מסך.</li>
+      <li>ניווט מלא במקלדת, כולל קישור ״דלג לתוכן הראשי״ וסימון פוקוס ברור.</li>
+      <li>טקסט חלופי לרכיבים גרפיים ותוויות לכל שדות הטופס.</li>
+      <li>ניגודיות צבעים תקינה, ותמיכה בהגדלת טקסט עד 200% בלי אובדן תוכן.</li>
+      <li>התאמה לטלפונים ולמסכים בכל גודל.</li>
+      <li>כיבוד הגדרת ״הפחתת תנועה״ של מערכת ההפעלה.</li>
+      <li>תפריט נגישות: הגדלת טקסט, ניגודיות גבוהה, הדגשת קישורים, גופן קריא ועצירת אנימציות.</li>
+    </ul>
+    <h3>מגבלות ידועות</h3>
+    <p>למרות מאמצינו, ייתכן שחלקים באתר עדיין אינם נגישים במלואם. נשמח לקבל דיווח ולתקן במהירות.</p>
+    <h3>רכז הנגישות</h3>
+    <p><b>שון אזולאי</b> · טלפון: 052-889-2345 · מייל: shonazulay95@gmail.com</p>
+    <p>בפנייה, נשמח אם תפרטו את הבעיה, העמוד שבו נתקלתם בה, והדפדפן או הטכנולוגיה המסייעת שבהם השתמשתם.</p>
+  </div>
+</dialog>
+</div>
+
+<script>
+(function(){
+  const root=document.documentElement;
+  root.setAttribute('lang','he');root.setAttribute('dir','rtl');
+  const WA='972528892345';
+  const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+  const waUrl=t=>'https://wa.me/'+WA+(t?'?text='+encodeURIComponent(t):'');
+
+
+  /* theme toggle: light / dark, remembered per visitor */
+  const themeBtn=document.getElementById('themeBtn');
+  const sysDark=window.matchMedia('(prefers-color-scheme: dark)');
+  function isDark(){const t=root.getAttribute('data-theme');return t?t==='dark':sysDark.matches}
+  function syncTheme(){const d=isDark();document.querySelector('.site').classList.toggle('is-dark',d);themeBtn.setAttribute('aria-label',d?'מעבר לתצוגה בהירה':'מעבר לתצוגה כהה')}
+  const savedTheme=store.get('servora-theme');
+  if(savedTheme==='light'||savedTheme==='dark')root.setAttribute('data-theme',savedTheme);
+  themeBtn.addEventListener('click',()=>{const next=isDark()?'light':'dark';root.setAttribute('data-theme',next);store.set('servora-theme',next);syncTheme()});
+  if(sysDark.addEventListener)sysDark.addEventListener('change',syncTheme);
+  syncTheme();
+
+  /* mobile menu */
+  const nav=document.getElementById('nav'),menuBtn=document.getElementById('menuBtn');
+  menuBtn.addEventListener('click',()=>{const o=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o)});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
+
+  /* default WA greeting */
+  document.querySelectorAll('.wa-link').forEach(a=>a.href=waUrl('היי, הגעתי מהאתר של Servora ואשמח לשמוע עוד 🙂'));
+
+  /* phone mock tabs */
+  const tabs=[...document.querySelectorAll('.app-tab')],panes=[...document.querySelectorAll('.pane')];
+  let cur=0,timer=null;
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(i){cur=i;tabs.forEach((t,k)=>{t.classList.toggle('on',k===i);t.setAttribute('aria-selected',k===i)});panes.forEach((p,k)=>p.setAttribute('aria-hidden',k!==i))}
+  function start(){if(reduce||root.classList.contains('a11y-still'))return;stop();timer=setInterval(()=>show((cur+1)%tabs.length),4200)}
+  function stop(){clearInterval(timer);timer=null}
+  tabs.forEach((t,i)=>t.addEventListener('click',()=>{show(i);stop()}));
+  const phone=document.getElementById('phone');
+  phone.addEventListener('mouseenter',stop);phone.addEventListener('mouseleave',start);
+  start();
+
+
+  /* device toggle (shared by hero and builder) */
+  const mini=document.getElementById('mini');
+  function setDevice(dev){
+    const desk=dev==='desktop';
+    phone.classList.toggle('desk',desk);phone.parentElement.classList.toggle('is-desk',desk);document.querySelector('.hero-grid').classList.toggle('is-desk',desk);
+    mini.classList.toggle('m-desk',desk);mini.classList.toggle('m-phone',!desk);
+    [phone,mini].forEach(el=>{el.classList.remove('swap');void el.offsetWidth;el.classList.add('swap')});
+    document.querySelectorAll('[data-device]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.device===dev));
+  }
+  document.querySelectorAll('[data-device]').forEach(b=>b.addEventListener('click',()=>setDevice(b.dataset.device)));
+
+  /* module builder */
+  const ICON={
+    cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+    ai:'<path d="M4 5h16v11H9l-5 4V5z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01"/>',
+    box:'<path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/>',
+    cart:'<path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.5L21 8H6"/><circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/>',
+    card:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.4"/><path d="M5.5 16.5c.8-1.7 2-2.4 3.5-2.4s2.7.7 3.5 2.4M14.5 10h4M14.5 13h4"/>',
+    chart:'<path d="M4 4v16h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/>',
+    pay:'<rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19M6 15h4"/>'
+  };
+  const MODULES=[
+    {id:'scheduling',name:'קביעת תורים',tab:'תורים',desc:'יומן, נותני שירות, תורים אונליין',icon:'cal'},
+    {id:'ai',name:'סוכן AI',tab:'סוכן AI',desc:'עונה ללקוחות 24/7',icon:'ai'},
+    {id:'inventory',name:'ניהול מלאי',tab:'מלאי',desc:'כמויות ושווי מלאי',icon:'box'},
+    {id:'orders',name:'הזמנות לקוחות',tab:'הזמנות',desc:'לקוחות מזמינים, אתם מאשרים',icon:'cart',requires:'inventory'},
+    {id:'customers',name:'כרטיס לקוח',tab:'לקוחות',desc:'היסטוריה ופרטים של כל לקוח',icon:'card'},
+    {id:'reports',name:'דוח חודשי',tab:'דוחות',desc:'הכנסות, עומסים, שירותים',icon:'chart'},
+    {id:'payments',name:'סליקה',tab:'תשלומים',desc:'בקרוב · אפשר לסמן עניין',icon:'pay'}
+  ];
+  const byId=Object.fromEntries(MODULES.map(m=>[m.id,m]));
+  const picks=document.getElementById('picks');
+  MODULES.forEach(m=>{
+    const w=document.createElement('div');w.className='pick';w.dataset.id=m.id;
+    w.innerHTML='<input type="checkbox" id="m-'+m.id+'" value="'+m.id+'" aria-describedby="d-'+m.id+'">'+
+      '<label class="card" for="m-'+m.id+'"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'+ICON[m.icon]+'</svg></span>'+
+      '<span><b>'+m.name+'</b><small id="d-'+m.id+'">'+m.desc+'</small></span>'+
+      '<span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12l5 5L19 8"/></svg></span></label>';
+    picks.appendChild(w);
+  });
+  const boxes=MODULES.map(m=>document.getElementById('m-'+m.id));
+  const depNote=document.getElementById('depNote');
+  function flash(id){const el=picks.querySelector('[data-id="'+id+'"]');el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')}
+  picks.addEventListener('change',e=>{
+    const id=e.target.value,on=e.target.checked;
+    depNote.hidden=true;
+    MODULES.forEach(m=>{
+      if(on&&m.id===id&&m.requires){const req=document.getElementById('m-'+m.requires);if(!req.checked){req.checked=true;flash(m.requires);depNote.textContent='״'+m.name+'״ עובד על גבי ״'+byId[m.requires].name+'״, אז הוספנו אותו לחבילה.';depNote.hidden=false}}
+      if(!on&&m.requires===id){const dep=document.getElementById('m-'+m.id);if(dep.checked){dep.checked=false;flash(m.id);depNote.textContent='בלי ״'+byId[id].name+'״ אין על מה לבנות ״'+m.name+'״, אז גם הוא הוסר.';depNote.hidden=false}}
+    });
+    render();
+  });
+  const bizName=document.getElementById('bizName');
+  bizName.addEventListener('input',render);
+  function selected(){return MODULES.filter(m=>document.getElementById('m-'+m.id).checked)}
+  function render(){
+    const sel=selected();
+    const name=bizName.value.trim();
+    document.getElementById('miniName').textContent=name||'העסק שלכם';
+    document.getElementById('miniAv').textContent=(name||'ע').charAt(0);
+    const tabsEl=document.getElementById('miniTabs');
+    tabsEl.innerHTML=sel.length?sel.map(m=>'<span>'+m.tab+'</span>').join(''):'<em>סמנו מודול כדי לראות אותו כאן</em>';
+    document.getElementById('sumCount').textContent=sel.length;
+    const list=sel.map(m=>m.name).join(', ');
+    const msg='היי, הרכבתי חבילה באתר של Servora'+(name?' עבור '+name:'')+'.\nמודולים: '+(list||'עוד לא בחרתי, אשמח להתייעץ')+'\nאשמח לשמוע פרטים והצעת מחיר.';
+    document.getElementById('sendPkg').href=waUrl(msg);
+    const ch=document.getElementById('chosen');
+    if(sel.length){ch.innerHTML='מודולים שבחרתם: <b></b>';ch.querySelector('b').textContent=list}
+    else ch.innerHTML='עוד לא בחרתם מודולים. אפשר לבחור ב<a href="#builder" class="gold">הרכבת החבילה</a>, או לספר לנו בהודעה.';
+    if(name&&!document.getElementById('f-biz').value)document.getElementById('f-biz').placeholder=name;
+  }
+  ['scheduling','ai'].forEach(id=>document.getElementById('m-'+id).checked=true);
+  render();
+
+  /* contact form -> WhatsApp */
+  const cf=document.getElementById('cf'),send=document.getElementById('cfSend'),status=document.getElementById('cfStatus');
+  function fieldErr(input,msg){const f=input.closest('.field');f.classList.toggle('bad',!!msg);f.querySelector('.err').textContent=msg||'';if(msg)input.setAttribute('aria-invalid','true');else input.removeAttribute('aria-invalid')}
+  function validate(){
+    let ok=true;const n=cf.elements.name,p=cf.elements.phone,c=document.getElementById('f-consent');
+    if(!n.value.trim()){fieldErr(n,'נא למלא שם');ok=false}else fieldErr(n);
+    const digits=p.value.replace(/\D/g,'');
+    if(digits.length<9||digits.length>13){fieldErr(p,'נא למלא מספר טלפון תקין');ok=false}else fieldErr(p);
+    if(!c.checked){status.style.color='#F08A8A';status.textContent='יש לאשר את מדיניות הפרטיות';ok=false}
+    return ok;
+  }
+  function buildMsg(){
+    const e=cf.elements,sel=selected().map(m=>m.name).join(', ');
+    const lines=['היי, פנייה מהאתר של Servora','שם: '+e.name.value.trim(),'טלפון: '+e.phone.value.trim()];
+    const biz=e.biz.value.trim()||bizName.value.trim();if(biz)lines.push('עסק: '+biz);
+    if(e.type.value)lines.push('תחום: '+e.type.value);
+    if(sel)lines.push('מודולים: '+sel);
+    if(e.msg.value.trim())lines.push('הודעה: '+e.msg.value.trim());
+    return lines.join('\n');
+  }
+  cf.addEventListener('input',()=>{send.href=waUrl(buildMsg())});
+  send.addEventListener('click',ev=>{
+    if(!validate()){ev.preventDefault();const bad=cf.querySelector('[aria-invalid="true"]');if(bad)bad.focus();return}
+    send.href=waUrl(buildMsg());
+    status.style.color='';status.textContent='ההודעה מוכנה בוואטסאפ. נשאר רק ללחוץ ״שליחה״ שם.';
+  });
+  cf.addEventListener('submit',e=>e.preventDefault());
+
+  /* copy buttons */
+  document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+    const v=b.dataset.copy;
+    const done=()=>{b.textContent='הועתק';setTimeout(()=>b.textContent='העתק',1600)};
+    const fallback=()=>{const r=document.createRange();r.selectNodeContents(b.previousElementSibling.querySelector('.val'));const s=getSelection();s.removeAllRanges();s.addRange(r)};
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(v).then(done,fallback);else fallback();
+  }));
+
+  /* legal dialogs */
+  function openDlg(id){const d=document.getElementById('dlg-'+id);if(!d)return;if(typeof d.showModal==='function'){if(!d.open)d.showModal()}else d.setAttribute('open','')}
+  document.addEventListener('click',e=>{
+    const o=e.target.closest('[data-open]');if(o){e.preventDefault();openDlg(o.dataset.open);return}
+    const c=e.target.closest('[data-close]');if(c){c.closest('dialog').close()}
+  });
+  document.querySelectorAll('dialog.legal').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
+  const h=(location.hash||'').slice(1);if(['privacy','terms','accessibility'].includes(h))openDlg(h);
+
+  /* accessibility widget */
+  const panel=document.getElementById('a11yPanel'),aBtn=document.getElementById('a11yBtn');
+  function togglePanel(open){panel.hidden=!open;aBtn.setAttribute('aria-expanded',open);if(open)panel.querySelector('button.opt').focus()}
+  aBtn.addEventListener('click',()=>togglePanel(panel.hidden));
+  document.getElementById('a11yClose').addEventListener('click',()=>{togglePanel(false);aBtn.focus()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){togglePanel(false);aBtn.focus()}});
+  let state={text:0,contrast:false,links:false,readable:false,still:false};
+  try{const s=JSON.parse(store.get('servora-a11y')||'null');if(s)state=Object.assign(state,s)}catch(e){}
+  function apply(){
+    root.classList.remove('a11y-text-1','a11y-text-2');if(state.text>0)root.classList.add('a11y-text-'+state.text);
+    ['contrast','links','readable','still'].forEach(k=>{root.classList.toggle('a11y-'+k,state[k]);const b=panel.querySelector('[data-a11y="'+k+'"]');if(b)b.setAttribute('aria-pressed',state[k])});
+    if(state.still)stop();else start();
+    store.set('servora-a11y',JSON.stringify(state));
+  }
+  panel.addEventListener('click',e=>{
+    const b=e.target.closest('[data-a11y]');if(!b)return;const k=b.dataset.a11y;
+    if(k==='text-up')state.text=Math.min(2,state.text+1);
+    else if(k==='text-down')state.text=Math.max(0,state.text-1);
+    else if(k==='reset')state={text:0,contrast:false,links:false,readable:false,still:false};
+    else state[k]=!state[k];
+    apply();
+  });
+  apply();
+
+  /* storage notice */
+  const ck=document.getElementById('cookie');
+  if(!store.get('servora-notice'))ck.hidden=false;
+  document.getElementById('cookieOk').addEventListener('click',()=>{ck.hidden=true;store.set('servora-notice','1')});
+})();
+</script>
+
+</body>
+</html>
